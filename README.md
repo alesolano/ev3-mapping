@@ -36,3 +36,10 @@ This technique could be used to improve the mapping stage.
 - [ ] Live mapping
 
 The idea is that we could watch how the map is being created, how it evolves from blank to map while the robot roams the room.
+
+### paradigms
+
+There's no an unique solution to this problem. We can follow different paradigms in order to accomplish the milestones. We should list them and test them to have a better comprehension of the field of robotic mapping and to finish with the best possible solution.
+We are listing the paradigms in the [wiki] (https://github.com/alesolano/ev3-mapping/wiki).
+
+Currently, we're working on the [Grid map paradigm] (https://github.com/alesolano/ev3-mapping/wiki#grid-map).
