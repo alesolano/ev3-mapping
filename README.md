@@ -43,3 +43,19 @@ There's no an unique solution to this problem. We can follow different paradigms
 We are listing the paradigms in the [wiki] (https://github.com/alesolano/ev3-mapping/wiki).
 
 Currently, we're working on the [Grid map paradigm] (https://github.com/alesolano/ev3-mapping/wiki#grid-map).
+
+### code design
+
+We need some classes and functions to attain the milestones. *Maybe it's time to open a new page in the wiki.*
+
+Classes:
+
+1. DiffRobot.  This class defines a basic differential robot. It needs the port addresses of its two motors, the radius of the wheels and distance between the wheels. It has methods like go_forwards(distance), turn_right(angle) and turn_left(angle).
+2. EXPLOR3R. This class inherits DiffRobot, setting port addresses and distances by its default values, along with the inclusion of ultrasonic sensor, with possibility of having touch and color sensors.
+3. GridRobot. This class is specific for our project. It inherits EXPLOR3R and has methods like go_forward_cell(), go_backward_cell(), go_right_cell(), go_left_cell(), go_cell(x, y), get_current_cell().
+4. GridMap. *Currently pondering*
+
+Functions:
+
+1. roam().
+
