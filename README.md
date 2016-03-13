@@ -3,8 +3,8 @@ Repository created for the sake of learning. The goal is that the EV3 could crea
 
 ### robot kit
 
-The object of this project is a LEGO Mindstorms EV3, using the [EXPLOR3R chassis] (http://robotsquare.com/2015/10/06/explor3r-building-instructions/) designed by Laurens Valk.
-The code will be implemented in Python, using the [ev3dev operating system] (http://www.ev3dev.org/).
+The object of this project is a LEGO Mindstorms EV3, using the [EXPLOR3R chassis](http://robotsquare.com/2015/10/06/explor3r-building-instructions/) designed by Laurens Valk.
+The code will be implemented in Python, using the [ev3dev operating system](http://www.ev3dev.org/).
 
 But hey, don't get scared! **You don't need to have an EV3 at home to contribute to the project**. The idea is to develop robotics projects where an EV3 is the tester. So, in order to ease the transition between ideas and implementation, we're developing a [quick guide](https://docs.google.com/document/d/1BQL6n_TtwxtuzLo3r-wGgEYh9efFLvU81lJhyMmS0ns/edit?usp=sharing) to program an EV3 with Python.
 
@@ -42,13 +42,13 @@ The idea is that we could watch how the map is being created, how it evolves fro
 ### paradigms
 
 There's no an unique solution to this problem. We can follow different paradigms in order to accomplish the milestones. We should list them and test them to have a better comprehension of the field of robotic mapping and to finish with the best possible solution.
-We are listing the paradigms in the [wiki] (https://github.com/alesolano/ev3-mapping/wiki).
+We are listing the paradigms in the [wiki](https://github.com/alesolano/ev3-mapping/wiki).
 
-Currently, we're working on the [Grid map paradigm] (https://github.com/alesolano/ev3-mapping/wiki#grid-map).
+Currently, we're working on the [Grid map paradigm](https://github.com/alesolano/ev3-mapping/wiki#grid-map).
 
 ### code design
 
-We need some classes and functions to attain the milestones. This will be moved to this wiki page: [Grid map API] (https://github.com/alesolano/ev3-mapping/wiki/Grid-Map-API)
+We need some classes and functions to attain the milestones. This will be moved to this wiki page: [Grid map API](https://github.com/alesolano/ev3-mapping/wiki/Grid-Map-API)
 
 Classes:
 
