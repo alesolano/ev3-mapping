@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 from ev3dev.auto import LargeMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C, OUTPUT_D
+from time import sleep
 PI = 3.141592653589793
 
 class DiffRobot(object): # do i need to inherit object?
@@ -11,50 +12,52 @@ class DiffRobot(object): # do i need to inherit object?
 		self.width = width
 		self.motors = [LargeMotor(address) for address in (r_address, l_address)]
 
-	def go_forwards(self, distance, dc=60):
-    	"""docstring for go_forwards"""
+	def go_forwards(self, distance=None, dc=60):
+		"""docstring for go_forwards"""
 		if distance != None:
 
-			turns = distance/(diam * PI)
+			turns = distance/(self.diam * PI)
 
-			for m in motors:
+			for m in self.motors:
 				m.duty_cycle_sp = dc
 				m.position = turns*360
 				m.run_to_abs_pos()
-			while 'running' in motors[0].state: sleep(0.01)
+			while 'running' in self.motors[0].state: sleep(0.01)
 
 		else:
-			for m in motors:
+			for m in self.motors:
 				m.duty_cycle_sp = dc
 				m.run_direct()
 
-	def go_backwards(self, distance, dc=60):
-		go_forwards(-distance, -dc)
+	def go_backwards(self, distance=None, dc=60):
+		if distance != None: distance = -distance
+		self.go_forwards(distance, -dc)
 
-	def turn_left(self, angle, dc=60):
+	def turn_left(self, angle=None, dc=60):
 		"""docstring for turn_right"""
 		if angle != None:
 
-			turns_per_spin = width/diam
+			turns_per_spin = self.width/self.diam
 			turns = (angle/360) * turns_per_spin
 
-			for m in motors:
+			for m in self.motors:
 				m.duty_cycle_sp = dc
 				m.position = turns*360
 				m.run_to_abs_pos()
 				dc = -dc
 				turns = -turns
-			while 'running' in m.state: sleep(0.01)
+			while 'running' in self.motors[0].state: sleep(0.01)
 
 		else:
-			for m in motors:
+			for m in self.motors:
 				m.duty_cycle_sp = dc
 				m.run_direct()
 				dc = -dc
 
-	def turn_right(self, angle, dc=60):
-		turn_left(-angle, -dc)
+	def turn_right(self, angle=None, dc=60):
+		if angle != None: angle = -angle
+		self.turn_left(angle, -dc)
 
 	def stop(self):
-		for m in motors:
+		for m in self.motors:
 			m.stop()
