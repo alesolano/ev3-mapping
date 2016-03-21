@@ -8,10 +8,10 @@ from DiffRobot import *
 class EXPLOR3R(DiffRobot):
     """docstring for EXPLOR3R"""
     def __init__(
-        self, diam=5.5, width=14, r_address=OUTPUT_A, l_address=OUTPUT_B,
+        self, r_address=OUTPUT_A, l_address=OUTPUT_B,
         us_address=INPUT_4, ts_address=None, cs_address=None):
     
-        DiffRobot.__init__(self, diam, width)
+        DiffRobot.__init__(self, diam=5.5, width=14)
         
         self.us = UltrasonicSensor(us_address)
         if ts_address != None:
