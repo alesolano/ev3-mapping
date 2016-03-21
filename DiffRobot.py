@@ -11,6 +11,7 @@ class DiffRobot(object):
         self.diam = diam
         self.width = width
         self.motors = [LargeMotor(address) for address in (r_address, l_address)]
+        self.reset_position()
 
     def go_forwards(self, distance=None, dc=60):
         """docstring for go_forwards"""
@@ -62,3 +63,6 @@ class DiffRobot(object):
         for m in self.motors:
             m.stop()
 
+    def reset_position(self):
+        for m in self.motors:
+            m.position = 0
