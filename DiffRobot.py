@@ -4,10 +4,10 @@ from ev3dev.auto import LargeMotor, OUTPUT_A, OUTPUT_B, OUTPUT_C, OUTPUT_D
 from time import sleep
 PI = 3.141592653589793
 
-class DiffRobot(object): # do i need to inherit object?
+class DiffRobot(object):
     """docstring for DiffRobot"""
-        def __init__(self, diam, width, r_address=OUTPUT_A, l_address=OUTPUT_B):
-        super(DiffRobot, self).__init__() # understand
+    def __init__(self, diam, width, r_address=OUTPUT_A, l_address=OUTPUT_B):
+        super(DiffRobot, self).__init__()
         self.diam = diam
         self.width = width
         self.motors = [LargeMotor(address) for address in (r_address, l_address)]
@@ -20,7 +20,7 @@ class DiffRobot(object): # do i need to inherit object?
 
             for m in self.motors:
                 m.duty_cycle_sp = dc
-                m.position = turns*360
+                m.position_sp = turns*360
                 m.run_to_abs_pos()
             while 'running' in self.motors[0].state: sleep(0.01)
 
@@ -42,7 +42,7 @@ class DiffRobot(object): # do i need to inherit object?
 
             for m in self.motors:
                 m.duty_cycle_sp = dc
-                m.position = turns*360
+                m.position_sp = turns*360
                 m.run_to_abs_pos()
                 dc = -dc
                 turns = -turns
