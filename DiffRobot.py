@@ -22,7 +22,7 @@ class DiffRobot(object):
             for m in self.motors:
                 m.duty_cycle_sp = dc
                 m.position_sp = turns*360
-                m.run_to_abs_pos()
+                m.run_to_rel_pos()
             while 'running' in self.motors[0].state: sleep(0.01)
 
         else:
@@ -44,7 +44,7 @@ class DiffRobot(object):
             for m in self.motors:
                 m.duty_cycle_sp = dc
                 m.position_sp = turns*360
-                m.run_to_abs_pos()
+                m.run_to_rel_pos()
                 dc = -dc
                 turns = -turns
             while 'running' in self.motors[0].state: sleep(0.01)
