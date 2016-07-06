@@ -11,7 +11,7 @@ class EXPLOR3R(DiffRobot):
         self, r_address=OUTPUT_A, l_address=OUTPUT_B,
         us_address=INPUT_4, ts_address=None, cs_address=None):
     
-        DiffRobot.__init__(self, diam=5.5, width=14)
+        DiffRobot.__init__(self, diam=5.5, width=14.0)
         
         self.us = UltrasonicSensor(us_address)
         if ts_address != None:

@@ -39,7 +39,7 @@ class DiffRobot(object):
         if angle != None:
 
             turns_per_spin = self.width/self.diam
-            turns = (angle/360) * turns_per_spin
+            turns = (angle/360.0) * turns_per_spin
 
             for m in self.motors:
                 m.duty_cycle_sp = dc
